@@ -1,8 +1,8 @@
 package native
 
 type PhotoListResponse struct {
-	Photos  []*KwaiOrdePhotoViewSnake `json:"photos"`  // 视频列表
-	PCursor string                    `json:"pcursor"` // 下标，如果后面无更多视频则返回 no_more; 如果后续有更多视频需用此返回填到拉取视频接口的入参上
+	Photos  []*KwaiOrderPhotoViewSnake `json:"photos"`  // 视频列表
+	PCursor string                     `json:"pcursor"` // 下标，如果后面无更多视频则返回 no_more; 如果后续有更多视频需用此返回填到拉取视频接口的入参上
 }
 
 type CdnUrlInfo struct {
@@ -10,7 +10,7 @@ type CdnUrlInfo struct {
 	Url string `json:"url"` // url信息
 }
 
-type KwaiOrdePhotoViewSnake struct {
+type KwaiOrderPhotoViewSnake struct {
 	PhotoID              string       `json:"photo_id"`                     // 加密后的photoId
 	Caption              string       `json:"caption"`                      // 视频标题
 	CoverURL             []CdnUrlInfo `json:"cover_url"`                    // 封面url
@@ -19,5 +19,5 @@ type KwaiOrdePhotoViewSnake struct {
 	Height               int          `json:"height"`                       // 视频高度
 	Width                int          `json:"width"`                        // 视频宽度
 	CreativeMaterialType int          `json:"creative_material_type"`       // 视频横竖版: 1竖版，2横版
-	AdSocialOrderID      int          `json:"ad_socail_order_id,omitempty"` // 聚星订单id
+	AdSocialOrderID      string       `json:"ad_social_order_id,omitempty"` // 聚星订单id
 }
